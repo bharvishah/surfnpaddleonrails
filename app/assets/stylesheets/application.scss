@@ -1,0 +1,360 @@
+@import "bourbon";
+@import "base/base";
+@import "neat";
+
+
+@mixin grid-item-columns($columns)
+ {
+width: (100% / 12) * $columns;
+}
+    .hero
+    {
+      $hero-background-top: darken($base-accent-color, 0);
+      $hero-background-bottom: adjust-hue($hero-background-top, -70);
+      $hero-color: black;
+      $gradient-angle: 10deg;
+    //  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+      $hero-image: url(new-header.jpg);
+      @include background-image($hero-image);
+    //  background: rgba($blue, 0.6) no-repeat center center fixed;
+
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: cover;
+      padding-bottom: 4em;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+
+      .hero-logo img
+      {
+        height: 3em;
+        margin-bottom: 2.5em;
+      }
+
+      .hero-inner
+      {
+        @include outer-container;
+        @include clearfix;
+        padding: 3em;
+        margin: auto;
+        text-align: center;
+        color: $hero-color;
+
+      .top-logo
+        {
+          //text-align: left;
+          float:left;
+        }
+        .top-logo img
+        {
+          vertical-align: middle;
+        }
+
+        .top-nav
+        {
+          float: right;
+        }
+        .top-nav img
+        {
+          vertical-align: middle;
+        }
+        .top-nav a:visited, a:link
+        {
+          color: $hero-color;
+        }
+
+
+        .hero-copy
+        {
+          //background: rgba($blue, 0.6) no-repeat center center fixed;
+          //padding-top: 150px;
+
+          text-align: center;
+          h1
+          {
+            //margin-bottom: .5em;
+            @include media($large-screen)
+            {
+              font-size: 5em;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 400;
+              color: white;
+            }
+          }
+
+          p
+          {
+            //font-family: ‘Metrophobic’, Arial, serif; font-weight: 400;
+            margin: auto;
+            margin-bottom: 3em;
+            font-weight: 700;
+            line-height: 4em;
+            @include media($large-screen)
+            {
+              font-size: 1em;
+              max-width: 40%;
+            }
+          }
+        }
+      }
+    }
+
+.wrapper
+  {
+    //font-family: 'open sans', sans-serif; font-weight: 700;
+    height:500px;
+    @include outer-container;
+    @include omega();
+    padding-top: 100px;
+    margin-left: 100px;
+    .primary
+    {
+
+      .author
+      {
+        color: blue;
+        border-radius: 10px;
+        height: 30px;
+        width: 30px;
+        vertical-align: middle;
+
+
+       img
+        {
+        //height: 3.6em;
+        border-radius: 10px;
+        height: "30";
+        width: "30";
+        vertical-align: middle;
+        }
+      }
+
+      .date {
+        color: transparentize($base-font-color, .5);
+        // font-family: $serif-2;
+        // font-style: italic;
+        font-size: .9em;
+        margin-bottom: .3em;
+        padding-left: 2em;
+      }
+
+  .article-nav
+  {
+
+    a:link
+    {
+      color: white;
+      }
+    a:hover
+    {
+      background-color: $base-accent-color;
+    }
+    img
+    {
+      vertical-align: middle;
+    }
+    span
+    {
+      background-color:gray;
+      margin-right: 20px ;
+    }
+  }
+      @include span-columns(8);
+      height:700px;
+
+  }
+
+    .secondary
+    {
+      padding-left: 50px;
+      @include span-columns(4);
+      height:700px;
+      .trial
+      {
+        margin-left:auto;
+        margin-right:auto;
+        width: 100px;
+      //  text-align: middle;
+        height:100px;
+        border-radius: 50px;
+      //  @include span-columns(12);
+      //  @include omega();
+      }
+      div#alpha
+      {
+        text-align: middle;
+        height:200px;
+        border-radius: 50px;
+        @include span-columns(12);
+        @include omega();
+      }
+      div#beta
+      {
+        height:300px;
+        @include span-columns(12);
+        @include omega();
+      }
+      div#gamma
+      {
+        padding-top: 25px;
+        height:200px;
+        margin: auto;
+        font-size: $base-font-size * 0.8;
+        @include span-columns(12);
+        @include omega();
+      }
+    }
+  }
+
+.bottom
+  {
+    div#bottomr1
+    {
+      //font-size: 50px;
+      text-align: center;
+      @include span-columns(12);
+      @include row();
+    }
+
+
+    .grid-items
+    {
+      $grid-items-background: $base-background-color;
+      $grid-item-background: desaturate($base-accent-color, 30);
+    // $grid-item-colors:
+    // desaturate($base-accent-color, 30),
+    // #3581A5,
+    // #5FBEBE,
+    // #98C79A,
+    // #A7A891,
+    // #BDCC97,
+    // #979EA0;
+    // $grid-item-border-size: 9px;
+      $grid-item-columns: 3;
+      $grid-item-big-columns: 8;
+      $grid-item-color: white;
+      $grid-item-height: 14em;
+      @include clearfix;
+
+    .grid-item
+    {
+      @include transition (all 0.2s ease-in-out);
+      height: $grid-item-height;
+      background: $grid-item-background;
+      width: 100%;
+      overflow: hidden;
+      float: left;
+      //padding: 2em;
+      border-top: 0;
+      //border-bottom: $grid-item-border-size solid $grid-items-background;
+      //border-left: $grid-item-border-size /2 solid $grid-items-background;
+      //border-right: $grid-item-border-size /2 solid $grid-items-background;
+      text-align: center;
+      cursor: pointer;
+
+      @include media($large-screen) {
+        @include grid-item-columns($grid-item-columns);
+      }
+
+      @for $i from 1 to 8 { // assign colors from $grid-item-colors list
+        &:nth-child(#{$i}) {
+            &:hover {
+              opacity: 1.0;
+            }
+        }
+      }
+    }
+
+    // .grid-item img {
+    //   display: block;
+    //   height: 3em;
+    //   margin: auto;
+    //   margin-bottom: 1em;
+    //   }
+
+    .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.2em;
+      margin-bottom: .4em;
+      }
+
+    .grid-item p {
+      margin: auto;
+      color: transparentize($grid-item-color, .3);
+      @include media($medium-screen) {
+        max-width: 70%;
+        }
+      }
+
+  // .grid-item-big {
+  //   @include media($large-screen) {
+  //     @include grid-item-columns($grid-item-big-columns);
+  //   }
+   p {
+      @include media($medium-screen) {
+        max-width: 60%;
+      }
+    }
+
+    .grid-item-image {
+      background-color: $grid-item-background;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: cover;
+      opacity: 0.4;
+    }
+  }
+
+
+  div#bottomr3
+    {
+      padding-top: 20px;
+      padding-left: 150px;
+      height:100px;
+      @include span-columns(12);
+      background: $base-accent-color;
+      color: white;
+
+      .footer-logo {
+        margin-right: 1em;
+        margin-bottom: 1em;
+        float:left
+
+          // @include media($large-screen)
+          // {
+          //   float: left;
+          //   margin-bottom: 0;
+          //
+          // }
+        }
+
+      .footer-logo img
+        {
+        height: 3.6em;
+        vertical-align: middle;
+        }
+      .footer-nav
+      {
+        padding-right: 150px;
+        padding-top: 10px;
+        margin-bottom: 2em;
+        vertical-align: middle;
+        float: right;
+        color: white;
+
+      a:link{
+        color: white;
+        }
+      }
+
+
+    }
+  }
+
+// header {
+//     background-color:black;
+//     color:white;
+//     text-align:center;
+//     padding:5px;
+//     height:100px;
+// }

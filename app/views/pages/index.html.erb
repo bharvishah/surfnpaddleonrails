@@ -1,0 +1,107 @@
+<header>
+
+
+<div class="hero">
+  <div class="hero-inner">
+    <a href="" class="hero-logo">
+  <%= image_tag "placeholder_logo_2.png", :class => "hero-logo" %>
+</a>
+  <span class="top-logo">
+    <%= image_tag "logo.png", :class => "top-logo" %>
+  SURF AND PADDLE CO. BLOG
+</span>
+  <span class="top-nav">
+    <nav>
+      <a href=""> ABOUT   </a>
+      <a href=""> SEARCH <%= image_tag "search.png", :class => "top-nav" %>
+</a>
+    </nav>
+  </span>
+    <div class="hero-copy">
+      <h1>SURF AND PADDLE Co. </h1><br>
+      An Iron Yard Academy project Est. Fall 2013
+    </div>
+  </div>
+</div>
+
+</header>
+
+
+<section class="wrapper">
+
+<article class="primary">
+<!--  <header> A fantastic Engaging header</header>-->
+<h1><%= @article.title %>
+ </h1>
+ <%= raw(@article.content) %>
+ <div class = "article-nav">
+<span>
+<%= image_tag "comments.png", :class => "article-nav" %>
+  <a href="javascript:void(0)">Read Comments</a>
+</span>
+<span>
+<%= image_tag "later.png", :class => "article-nav" %>
+  <a href="javascript:void(0)">Read Later</a>
+</span>
+<span>
+<%= image_tag "share.png", :class => "article-nav" %>
+  <a href="javascript:void(0)">Share this post</a>
+</span>
+</div>
+</article>
+<aside class="secondary">
+    <div id="alpha">
+      <div style="margin-left: auto; margin-right: auto; width: 70%;">
+        <%= image_tag "marie.jpg", :class => "trial" %>
+    <br>
+    <a href = "url"> Anne Marie</a>
+    </div>
+    <nav class = "aside-nav">
+  <a href="www.twitter.com">Twitter</a> |
+  <a href="www.facebook.com">Facebook</a> |
+  <a href="www.instagram.com">Instagram</a>
+
+</nav>
+    </div>
+    <div id="beta">
+      <%= image_tag "surf_lessons.jpg", :size =>"250x200" %>
+
+    <div><a href = "url"><u>About this ad</u></a></div>
+    </div>
+    <div id="gamma">
+    <h4>SIDEBAR SECTION HEADING</h4>
+    Collaboratively administrate empowered markets via plug-and-play networks.
+    I often see “Someone should make an X ipsum…” with X being something that doesn’t exist yet.
+    </div>
+</aside>
+</section>
+
+<footer class= "bottom">
+
+  <div id="bottomr1">
+    <hr /><h1>MOST POPULAR POSTS</h1>
+    </div>
+
+  <div class = "grid-items">
+      <%= link_to( raw("<h1>ARTICLE TWO</h1>"), root_path(article_selector: 2) , :class =>"grid-item grid-item-image", :style =>"background: url(../assets/img2.jpg)") %>
+      <%= link_to( raw("<h1>ARTICLE THREE</h1>"), root_path(article_selector: 3), :class =>"grid-item grid-item-image", :style =>"background: url(../assets/img4.jpg)") %>
+      <%= link_to( raw("<h1>ARTICLE FOUR</h1>"), root_path(article_selector: 4), :class =>"grid-item grid-item-image", :style =>"background: url(../assets/img4.jpg)") %>
+      <%= link_to( raw("<h1>ARTICLE FIVE</h1>"), root_path(article_selector: 5), :class =>"grid-item grid-item-image", :style =>"background: url(../assets/img4.jpg)") %>
+
+</div>
+
+<div id="bottomr3">
+  <div class="footer-logo">
+<%= image_tag "theironyard.png" %>
+  All rights reserved
+  </div>
+  <nav class = "footer-nav">
+  <a href="url1">Nav Item 1</a> |
+  <a href="url2">Nav Item 2</a> |
+  <a href="url3">Nav Item 3</a> |
+  <a href="url4">Nav Item 5</a>
+  </nav>
+
+</div>
+
+</footer>
